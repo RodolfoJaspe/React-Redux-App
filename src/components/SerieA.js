@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import Match from './Match';
 import { getSerieAMatches } from '../actions/serieAActions';
 
-const SerieA = (props) => {
+const SerieA = ({getSerieAMatches}) => {
     useEffect(() => {
-        props.getSerieAMatches();
-    },[props.getSerieAMatches]);
+        getSerieAMatches();
+    },[getSerieAMatches]);
 
     if (props.loading){
         return <><h2>Loading...</h2></>;

@@ -4,10 +4,10 @@ import Match from './Match';
 import { getEplMatches } from '../actions/eplActions';
 
 
-const PremierLeague = (props) => {
+const PremierLeague = ({getEplMatches}) => {
     useEffect(() => {
-        props.getEplMatches();
-    },[props.getEplMatches]);
+        getEplMatches();
+    },[getEplMatches]);
 
     if (props.loading){
         return <><h2>Loading...</h2></>;

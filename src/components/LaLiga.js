@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import Match from './Match';
 import { getLaLigaMatches } from '../actions/laLigaActions';
 
-const LaLiga = (props) => {
+const LaLiga = ({getLaLigaMatches}) => {
     useEffect(() => {
-        props.getLaLigaMatches();
-    },[props.getLaLigaMatches]);
+        getLaLigaMatches();
+    },[getLaLigaMatches]);
 
     if (props.loading){
         return <><h2>Loading...</h2></>;
