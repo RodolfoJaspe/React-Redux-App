@@ -4,19 +4,19 @@ import Match from './Match';
 import { getEplMatches } from '../actions/eplActions';
 
 
-const PremierLeague = ({getEplMatches}) => {
+const PremierLeague = ({getEplMatches, loading, matches}) => {
     useEffect(() => {
         getEplMatches();
     },[getEplMatches]);
 
-    if (props.loading){
+    if (loading){
         return <><h2>Loading...</h2></>;
     }
  
     return (
         <div>
             <h2>English Premier League</h2>
-            {props.matches.map(match => (
+            {matches.map(match => (
                 <Match match={match} key={match.title}/>
             ))} 
         </div>

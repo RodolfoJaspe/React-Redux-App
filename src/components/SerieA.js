@@ -3,19 +3,19 @@ import { connect } from 'react-redux';
 import Match from './Match';
 import { getSerieAMatches } from '../actions/serieAActions';
 
-const SerieA = ({getSerieAMatches}) => {
+const SerieA = ({getSerieAMatches, loading, matches}) => {
     useEffect(() => {
         getSerieAMatches();
     },[getSerieAMatches]);
 
-    if (props.loading){
+    if (loading){
         return <><h2>Loading...</h2></>;
     }
 
     return (
         <div>
             <h2>Serie A</h2>
-            {props.matches.map(match => (
+            {matches.map(match => (
                 <Match match={match} key={match.title}/>
             ))}
         </div>
